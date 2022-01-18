@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="contacts.action_contacts" model="ir.actions.act_window">
+          <field name="context">{'create': False, 'edit': False}</field>
+        </record>
+    </data>
+</odoo>

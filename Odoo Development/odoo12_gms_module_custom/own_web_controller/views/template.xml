@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="controller_template" name="Products">
+            <t t-call="website.layout">
+                <div class="container">
+                    <table class="table">
+                        <tr>
+                            <th>Number</th>
+                            <th>Customer Name</th>
+                        </tr>
+                        <t t-set="line_no" t-value="0"/>
+                        <t t-foreach="partners" t-as="cus">
+                            <t t-set="line_no" t-value="line_no + 1 "/>
+                            <tr>
+                                <td><t t-esc="line_no"/></td>
+                                <td><t t-esc="cus.name"/></td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

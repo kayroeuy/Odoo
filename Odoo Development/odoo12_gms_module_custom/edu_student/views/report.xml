@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <!-- NAME & FILE_NAME should be the same -->
+        <report
+            id="student_report"
+            model="edu.student"
+            report_type="qweb-html"
+            string="Student Report"
+            name="edu_student.student_template"
+            file="edu_student.student_template"
+        />
+
+
+    </data>
+</odoo>

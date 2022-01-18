@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="edu_student_view_form" model="ir.ui.view">
+            <field name="name">edu_student_view_form</field>
+            <field name="model">edu.student</field>
+            <field name="arch" type="xml">
+                <form string="edu_student_form">
+                    <header>
+                        <button string="Generate ClassName" name="generate_class_name" class="btn-primary" type="object"></button>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="firstName"/>
+                                <field name="lastName"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="gender"/>
+                                <field name="dob"/>
+                                <field name="age"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="vaccines" string="Vaccines">
+                                <field name="vaccine_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="inject_date"/>
+                                        <field name="vaccine_id"/>
+                                        <field name="remark"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="parent" string="Parents">
+                                <field name="parent_id" string="ParentID"/>
+                                <field name="parent_contact_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="relation_ship_type"/>
+                                        <field name="phone_number"/>
+                                        <field name="email"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="generate_class_name" string="Generate ClassName">
+                                <field name="class_name_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="student_id"/>
+                                        <field name="remark"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="edu_student_view_tree" model="ir.ui.view">
+            <field name="name">edu_student_view_tree</field>
+            <field name="model">edu.student</field>
+            <field name="arch" type="xml">
+                <tree string="edu_student_tree">
+                    <field name="firstName"/>
+                    <field name="lastName"/>
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="dob"/>
+                    <field name="age"/>
+                </tree>
+            </field>
+        </record>
+        <record id="edu_student_action" model="ir.actions.act_window">
+            <field name="name">Education Student</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">edu.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

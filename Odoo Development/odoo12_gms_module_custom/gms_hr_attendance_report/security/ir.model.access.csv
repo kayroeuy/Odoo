@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_attendance_sheet_report,access_hr_attendance_sheet_report,model_hr_attendance_sheet_report,,1,1,1,1
+access_hr_attendance_sheet_report_line,access_hr_attendance_sheet_report_line,model_hr_attendance_sheet_report_line,,1,1,1,1
+access_hr_attendance_generate_sheet,access_hr_attendance_generate_sheet,model_hr_attendance_generate_sheet,,1,1,1,1

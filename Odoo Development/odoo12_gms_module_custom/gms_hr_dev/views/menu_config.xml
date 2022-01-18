@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="gms_menu_root" name="GMS"/>
+        <menuitem id="gms_menu_sub" name="GMS Sub" parent="gms_menu_root" action="gms_hr_dev.gms_action" sequence="1"/>
+
+
+    </data>
+</odoo>

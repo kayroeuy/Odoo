@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="res_gms_form_view_inherit" model="ir.ui.view">
+            <field name="name">GMS Form Inherit</field>
+            <field name="model">res.gms</field>
+            <field name="inherit_id" ref="gms_hr_dev.res_gms_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='cmp_address']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="is_check"/>
+                    <field name="phone" attrs="{'required': [('is_check','=',True)]}"/>
+                    <field name="email" required="1"/>
+                    <field name="street"/>
+                </xpath>
+<!--                 <xpath expr="//field[@name='cmp_address']" position="before">-->
+<!--                    &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
+<!--                    <field name="phone"/>-->
+<!--                    <field name="email"/>-->
+<!--                    <field name="street"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//group[@id='cmp_info']" position="replace">-->
+<!--                    &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
+<!--                    <group>-->
+<!--                        <field name="phone"/>-->
+<!--                        <field name="email"/>-->
+<!--                        <field name="street"/>-->
+<!--                    </group>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='name']" position="replace">-->
+<!--                        &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
+<!--                        <group>-->
+<!--                        <field name="phone"/>-->
+<!--                        <field name="email"/>-->
+<!--                        <field name="street"/>-->
+<!--                    </group>-->
+<!--                </xpath>-->
+                 <xpath expr="//field[@name='name']" position="attributes">
+                        <!-- Add your fields or attributes here -->
+                       <attribute name="readonly">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='cmp_address']" position="attributes">
+                        <!-- Add your fields or attributes here -->
+<!--                       <attribute name="attrs">{'readonly': [('is_check','=',True)]}</attribute>-->
+                       <attribute name="attrs">{'invisible': [('is_check','=',True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

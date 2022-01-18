@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_student,edu_student,model_edu_student,,1,1,1,1
+access_vaccine,edu_vaccine,model_edu_vaccine,,1,1,1,1
+access_vaccine_type,edu_vaccine_type,model_edu_vaccine_type,,1,1,1,1
+access_parent,edu_parent,model_edu_parent,,1,1,1,1
+access_parent_contact,edu_parent_contact,model_edu_parent_contact,,1,1,1,1
+access_edu_grade,edu_grade,model_edu_grade,,1,1,1,1
+access_edu_grade_group,edu_grade_group,model_edu_grade_group,,1,1,1,1
+access_edu_class_type,edu_class_type,model_edu_class_type,,1,1,1,1
+access_edu_generate_classname,edu_generate_classname,model_edu_generate_classname,,1,1,1,1
+access_edu_class_name,edu_class_name,model_edu_class_name,,1,1,1,1

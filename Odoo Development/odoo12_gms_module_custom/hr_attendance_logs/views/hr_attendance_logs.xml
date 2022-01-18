@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_attendance_logs_view_tree" model="ir.ui.view">
+            <field name="name">hr_attendance_logs_view_tree</field>
+            <field name="model">hr.attendance</field>
+            <field name="arch" type="xml">
+                <tree string="hr_attendance_logs_tree">
+                    <field name="employee_id"/>
+                    <field name="check_in"/>
+                    <field name="check_out"/>
+                    <field name="first_check_in"/>
+                    <field name="last_check_out"/>
+                    <field name="late_hour"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_hr_attendance_logs_search" model="ir.ui.view">
+            <field name="name">view_hr_attendance_logs_search</field>
+            <field name="model">hr.attendance</field>
+            <field name="arch" type="xml">
+                <search string="Hr Attendance Search">
+                    <field name="employee_id"/>
+                    <field name="check_in"/>
+                    <filter string="My Attendances" name="my_attendances" domain="[('employee_id.user_id','=', uid),('first_check_in','!=', False)]"/>
+                    <filter string="Today" name="date_today" domain="[('check_in', '&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00')),('check_in', '&lt;=',datetime.datetime.now().strftime('%Y-%m-%d 23:23:59'))]"/>
+                    <separator/>
+                </search>
+            </field>
+        </record>
+        <record id="hr_attendance_logs_extends_action" model="ir.actions.act_window">
+            <field name="name">Attendance Logs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.attendance</field>
+            <field name="view_id" ref="hr_attendance_logs_view_tree"/>
+            <field name="context">{'search_default_date_today': 1}</field>
+            <field name="search_view_id" ref="view_hr_attendance_logs_search"/>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="hr_attendance_logs_menu" name="Attendance Logs"
+                  parent="hr_attendance.menu_hr_attendance_manage_attendances"
+                  action="hr_attendance_logs_extends_action" sequence="5"/>
+
+
+    </data>
+</odoo>

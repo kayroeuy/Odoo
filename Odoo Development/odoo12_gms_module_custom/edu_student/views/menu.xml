@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="edu_student_root_menu" name="Students" sequence="1"/>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="edu_student_sub_menu" name="Student" parent="edu_student_root_menu" action="edu_student.edu_student_action" sequence="1"/>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="edu_configuration_menu" name="Configuration" parent="edu_student_root_menu" sequence="2"/>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="edu_vaccine_menu" name="Vaccine" parent="edu_configuration_menu" action="edu_student.edu_vaccine_action" sequence="1"/>
+        <menuitem id="edu_vaccine_type_menu" name="Vaccine Type" parent="edu_configuration_menu" action="edu_student.edu_vaccine_type_action" sequence="2"/>
+        <menuitem id="edu_parent_menu" name="Parents" parent="edu_configuration_menu" action="edu_student.edu_parent_action" sequence="3"/>
+        <menuitem id="edu_grade_menu" name="Grade" parent="edu_configuration_menu" action="edu_student.edu_grade_action" sequence="4"/>
+        <menuitem id="edu_grade_group_menu" name="Grade Group" parent="edu_configuration_menu" action="edu_student.edu_grade_group_action" sequence="5"/>
+        <menuitem id="edu_class_type_menu" name="Class Type" parent="edu_configuration_menu" action="edu_student.edu_class_type_action" sequence="6"/>
+
+
+
+
+    </data>
+</odoo>

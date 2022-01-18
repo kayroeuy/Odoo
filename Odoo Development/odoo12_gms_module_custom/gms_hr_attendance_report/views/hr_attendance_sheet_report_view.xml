@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_attendance_sheet_view_form" model="ir.ui.view">
+            <field name="name">hr_attendance_sheet_view_form</field>
+            <field name="model">hr.attendance.sheet.report</field>
+            <field name="arch" type="xml">
+                <form string="hr_attendance_sheet_form">
+                    <header>
+                        <button type="object" string="Generate Attendance Sheet" class="btn btn-primary" name="generate_attendance_sheet"></button>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="employee_id"/>
+                            </group>
+                            <group>
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Attendance Sheet Line">
+                                <field name="attendance_sheet_ids">
+                                    <tree>
+                                        <field name="date"/>
+                                        <field name="weekdays"/>
+                                        <field name="planed_signIn" widget="float_time"/>
+                                        <field name="planed_signOut" widget="float_time"/>
+                                        <field name="actual_singIn" widget="float_time"/>
+                                        <field name="actual_singOut" widget="float_time"/>
+                                        <field name="lateIn" widget="float_time"/>
+                                        <field name="overtime" widget="float_time"/>
+                                        <field name="early_leave" widget="float_time"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="attendance_sheet_report_view_tree" model="ir.ui.view">
+            <field name="name">attendance_sheet_report_view_tree</field>
+            <field name="model">hr.attendance.sheet.report</field>
+            <field name="arch" type="xml">
+                <tree string="attendance_sheet_report_tree">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="attendance_sheet_report_action" model="ir.actions.act_window">
+            <field name="name">Action Attendance Sheet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.attendance.sheet.report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <menuitem id="menu_attendance_sheet_report" parent="hr_attendance.menu_hr_attendance_manage_attendances" name="Attendances Sheet" action="attendance_sheet_report_action" sequence="2"/>
+
+    </data>
+</odoo>
